@@ -6,6 +6,10 @@
   <packaging>war</packaging>
   <name>tdd-magne-to-effect</name>
   <description>tdd</description>
+	<properties>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+	</properties>
 
 	<build>
 		<plugins>
