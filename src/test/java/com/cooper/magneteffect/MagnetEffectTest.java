@@ -9,6 +9,8 @@ class MagnetEffectTest {
 	@Test
 	void test() {
 		Point beforePoint = new Point(49, 49);
+		
+		MagnetEffect effect = new MagnetEffect();
 	}
 
 }
