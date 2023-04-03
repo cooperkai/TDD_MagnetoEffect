@@ -8,7 +8,7 @@ class MagnetEffectTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		Point beforePoint = new Point(49, 49);
 	}
 
 }
