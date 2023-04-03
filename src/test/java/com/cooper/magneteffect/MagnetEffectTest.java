@@ -11,6 +11,7 @@ class MagnetEffectTest {
 		Point beforePoint = new Point(49, 49);
 		
 		MagnetEffect effect = new MagnetEffect();
+		Point afterPoint = effect.check(beforePoint);
 	}
 
 }
