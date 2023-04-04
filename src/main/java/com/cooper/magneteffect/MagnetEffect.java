@@ -15,10 +15,9 @@ public class MagnetEffect {
 				if (isInCircle(anchor, beforePoint)) {
 					return anchor;
 				}
-				return beforePoint;
 			}
+			return beforePoint;
 		}
-		return beforePoint;
 	}
 
 	public void addAnchor(Point anchor) {
