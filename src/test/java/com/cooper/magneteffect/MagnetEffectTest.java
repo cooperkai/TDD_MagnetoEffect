@@ -19,6 +19,7 @@ class MagnetEffectTest {
 	
 	@Test
 	void one_anchor() {
+		// Example one
 		Point expectPoint = new Point(50, 50);
 		Point beforePoint = new Point(49, 50);
 		
@@ -31,6 +32,7 @@ class MagnetEffectTest {
 	
 	@Test
 	void one_far_anchor() {
+		// Example two
 		Point expectPoint = new Point(50, 50);
 		Point beforePoint = new Point(50, 50);
 		
