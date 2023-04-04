@@ -24,6 +24,8 @@ class MagnetEffectTest {
 		
 		MagnetEffect effect = new MagnetEffect();
 		Point afterPoint = effect.addAnchor(new Point(50, 50));
+		
+		assertEquals(expectPoint, afterPoint);
 	}
 
 }
