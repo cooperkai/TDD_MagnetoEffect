@@ -2,10 +2,14 @@ package com.cooper.magneteffect;
 
 public class MagnetEffect {
 
-	Point anchor;
+	private Point anchor;
 	
 	public Point check(Point beforePoint) {
-		return new Point(49, 49);
+		if (anchor == null) {
+			return beforePoint;
+		} else {
+			return anchor;
+		}
 	}
 
 	public void addAnchor(Point anchor) {
