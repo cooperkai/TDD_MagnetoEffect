@@ -31,8 +31,8 @@ class MagnetEffectTest {
 	
 	@Test
 	void one_far_anchor() {
-		Point expectPoint = new Point(49, 50);
-		Point beforePoint = new Point(49, 50);
+		Point expectPoint = new Point(50, 50);
+		Point beforePoint = new Point(50, 50);
 		
 		MagnetEffect effect = new MagnetEffect();
 		effect.addAnchor(new Point(0, 0));
