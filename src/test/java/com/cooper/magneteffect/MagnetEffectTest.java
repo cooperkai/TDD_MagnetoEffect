@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class MagnetEffectTest {
 
 	@Test
-	void test() {
+	void no_anchor() {
 		Point expectPoint = new Point(49, 49);
 		Point beforePoint = new Point(49, 49);
 		
