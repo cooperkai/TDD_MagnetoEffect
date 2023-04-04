@@ -16,5 +16,14 @@ class MagnetEffectTest {
 		
 		assertEquals(expectPoint, afterPoint);
 	}
+	
+	@Test
+	void one_anchor() {
+		Point expectPoint = new Point(50, 50);
+		Point beforePoint = new Point(49, 50);
+		
+		MagnetEffect effect = new MagnetEffect();
+		Point afterPoint = effect.addAnchor(new Point(50, 50));
+	}
 
 }
