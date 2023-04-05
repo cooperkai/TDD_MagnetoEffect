@@ -70,5 +70,19 @@ class MagnetEffectTest {
 		
 		assertEquals(expectPoint, afterPoint);
 	}
+	
+	@Test
+	void two_anchors_find_the_nearest() {
+		// Example four
+		Point expectPoint = new Point(51, 51);
+		Point beforePoint = new Point(51, 52);
+		
+		MagnetEffect effect = new MagnetEffect();
+		effect.addAnchor(new Point(50, 50));
+		effect.addAnchor(new Point(51, 51));
+		Point afterPoint = effect.check(beforePoint);
+		
+		assertEquals(expectPoint, afterPoint);
+	}
 
 }
