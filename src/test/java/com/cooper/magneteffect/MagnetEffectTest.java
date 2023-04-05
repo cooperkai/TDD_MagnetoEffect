@@ -72,7 +72,7 @@ class MagnetEffectTest {
 	}
 	
 	@Test
-	void two_anchors_find_the_nearest() {
+	void two_anchors_multi_near_find_the_nearest() {
 		// Example four
 		Point expectPoint = new Point(51, 51);
 		Point beforePoint = new Point(51, 52);
