@@ -11,12 +11,27 @@ public class MagnetEffect {
 		if (anchors.isEmpty()) {
 			return beforePoint;
 		} else {
+			int nearDistance = 0;
+			Point nearestAnchor = null;
 			for (Point anchor : anchors) {
-				if (isInCircle(anchor, beforePoint)) {
-					return anchor;
+				int distance = calculateDistance(anchor, beforePoint);
+				
+				if (distance <= 5 && nearestAnchor == null) {
+					nearDistance = distance;
+					nearestAnchor = anchor;
+				} else {
+					if (nearDistance > distance) {
+						nearDistance = distance;
+						nearestAnchor = anchor;
+					}
 				}
 			}
-			return beforePoint;
+			
+			if (nearestAnchor == null) {
+				return beforePoint;
+			} else {
+				return nearestAnchor;
+			}
 		}
 	}
 
@@ -24,10 +39,9 @@ public class MagnetEffect {
 		anchors.add(anchor);
 	}
 
-	private boolean isInCircle(Point anchor, Point beforePoint) {
-		int distance = (int) Math.sqrt((anchor.getX() - beforePoint.getX()) * (anchor.getX() - beforePoint.getX())
+	private int calculateDistance(Point anchor, Point beforePoint) {
+		return (int) Math.sqrt((anchor.getX() - beforePoint.getX()) * (anchor.getX() - beforePoint.getX())
 				+ (anchor.getY() - beforePoint.getY()) * (anchor.getY() - beforePoint.getY()));
-		return distance <= 5;
 	}
 
 }
