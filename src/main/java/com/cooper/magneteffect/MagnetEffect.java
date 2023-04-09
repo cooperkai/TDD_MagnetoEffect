@@ -10,29 +10,30 @@ public class MagnetEffect {
 	public Point check(Point beforePoint) {
 		if (anchors.isEmpty()) {
 			return beforePoint;
-		} else {
-			int nearDistance = 0;
-			Point nearestAnchor = null;
-			for (Point anchor : anchors) {
-				int distance = calculateDistance(anchor, beforePoint);
-				
-				if (distance <= 5 && nearestAnchor == null) {
+		}
+
+		return findNearestAnchor(beforePoint);
+
+	}
+
+	private Point findNearestAnchor(Point beforePoint) {
+		int nearDistance = 0;
+		Point nearestAnchor = null;
+		for (Point anchor : anchors) {
+			int distance = calculateDistance(anchor, beforePoint);
+
+			if (distance <= 5 && nearestAnchor == null) {
+				nearDistance = distance;
+				nearestAnchor = anchor;
+			} else {
+				if (nearDistance > distance) {
 					nearDistance = distance;
 					nearestAnchor = anchor;
-				} else {
-					if (nearDistance > distance) {
-						nearDistance = distance;
-						nearestAnchor = anchor;
-					}
 				}
 			}
-			
-			if (nearestAnchor == null) {
-				return beforePoint;
-			} else {
-				return nearestAnchor;
-			}
 		}
+
+		return (nearestAnchor != null) ? nearestAnchor : beforePoint;
 	}
 
 	public void addAnchor(Point anchor) {
